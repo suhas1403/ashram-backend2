@@ -13,8 +13,8 @@ const getCount = async (req, res) => {
     // Query to count records matching the date and selected option
     const query = `
       SELECT COUNT(*) 
-      FROM sevaData 
-      WHERE dateTime = ? AND selectedSeva = ?
+      FROM "sevaData" 
+      WHERE "dateTime" = ? AND "selectedSeva" = ?
     `;
     const values = [date, selectedOption];
     console.log(values)

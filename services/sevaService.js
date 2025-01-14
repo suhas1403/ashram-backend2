@@ -13,10 +13,10 @@ const generateSeva = async (selectedSeva, personName, ashramName, dateTime, mobi
 
     // Fetch existing records for the selected Seva and dateTime to determine the last token number
     const query = `
-      SELECT tokenNumber
-      FROM sevaData
-      WHERE selectedSeva = $1 AND dateTime = $2
-      ORDER BY tokenNumber DESC LIMIT 1
+      SELECT "tokenNumber"
+      FROM "sevaData"
+      WHERE "selectedSeva" = $1 AND "dateTime" = $2
+      ORDER BY "tokenNumber" DESC LIMIT 1
     `;
     const values = [selectedSeva, normalizedDate];
     const result = await db.query(query, values);
@@ -27,7 +27,7 @@ const generateSeva = async (selectedSeva, personName, ashramName, dateTime, mobi
 
     // Insert the new record into the database
     const insertQuery = `
-      INSERT INTO sevaData (selectedSeva, personName, tokenNumber, ashramName, dateTime, mobileNumber,place)
+      INSERT INTO "sevaData" ("selectedSeva", "personName", "tokenNumber", "ashramName", "dateTime", "mobileNumber","place")
       VALUES ($1, $2, $3, $4, $5, $6, $7)
       RETURNING *;
     `;

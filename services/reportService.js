@@ -12,10 +12,10 @@ async function getSevaCountByDate(date) {
   try {
     // Query to get counts for each selectedSeva on the specific date
     const query = `
-      SELECT selectedSeva, COUNT(*) AS count 
-      FROM sevaData 
-      WHERE dateTime = $1 
-      GROUP BY selectedSeva
+      SELECT "selectedSeva", COUNT(*) AS count 
+      FROM "sevaData" 
+      WHERE "dateTime" = $1 
+      GROUP BY "selectedSeva"
     `;
     const values = [formattedDate];
 

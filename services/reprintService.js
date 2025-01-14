@@ -20,10 +20,10 @@ const getTokenDataForReprint = async (tokenNumber, selectedDate, selectedSeva) =
     // Query to fetch the token data from the database
     const query = `
       SELECT * 
-      FROM sevaData
-      WHERE tokenNumber = $1
-        AND dateTime = $2
-        AND selectedSeva = $3
+      FROM "sevaData"
+      WHERE "tokenNumber" = $1
+        AND "dateTime" = $2
+        AND "selectedSeva" = $3
     `;
     const values = [tokenNumber, normalizedSelectedDate, selectedSeva];
 
